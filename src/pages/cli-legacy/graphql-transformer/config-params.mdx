@@ -25,18 +25,10 @@ It gives you the mechanism to rotate the API Key, in scenarios such as to handle
 
 Follow these two steps when you need to rotate an API Key
 
-- Delete the existing API key by setting `CreateAPIKey` to `0` in the `amplify/backend/api/<apiName>/parameters.json` file and execute `amplify push`.
-- Create a new API key by setting `CreateAPIKey` to `1` in the `amplify/backend/api/<apiName>/parameters.json` file and execute `amplify push`.
+- Delete the existing API key by setting `CreateAPIKey` to `1` in the `amplify/backend/api/<apiName>/parameters.json` file and execute `amplify push`.
+- Create a new API key by setting `CreateAPIKey` to `0` in the `amplify/backend/api/<apiName>/parameters.json` file and execute `amplify push`.
 
 **Delete the existing API Key**
-
-```json
-{
-  "CreateAPIKey": 0
-}
-```
-
-**Create new API Key**
 
 ```json
 {
@@ -44,7 +36,17 @@ Follow these two steps when you need to rotate an API Key
 }
 ```
 
+**Create new API Key**
+
+```json
+{
+  "CreateAPIKey": 0
+}
+```
+
 ## APIKeyExpirationEpoch
+
+**Deprecated for APIKeyExpirationEpoch parameter's. In the future CreateAPIKey parameter replaces this behavior.**
 
 **Resets the API Key to expire 1 week after the next `amplify push`**
 
